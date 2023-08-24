@@ -8,6 +8,7 @@ namespace ImageRecognitionApp.Models.ImageProcessingParameters
 {
     public class ImageProcessingParametersAbstraction
     {
+        public bool ProgressiveProcessing;
         public BlurParameters BlurParameters { get; set; }
     }
 }

@@ -33,5 +33,11 @@ namespace ImageRecognitionApp.Implementations
 
             return null;
         }
+        public string[] GetAllAvailableAlgorithmNames()
+        {
+            string[] result = algorithms.Select(x => x.AlgorithmName).ToArray();
+
+            return result;
+        }
     }
 }

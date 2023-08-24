@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ImageRecognitionApp.Implementations;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ImageRecognitionApp.Interfaces
 {
-    internal interface IImage
+    internal interface IImage : ICloneable
     {
         byte[] Image { get; set; }
         IImage ImageFromFile(string fileName);
