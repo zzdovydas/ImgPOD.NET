@@ -101,7 +101,7 @@ namespace ImageRecognitionApp
                 {
                     if (a.Parameters.ProgressiveProcessing)
                     {
-                        tempImage = srcImage;
+                        tempImage = (IImage)srcImage.Clone();
                     }
 
                     IImageProcessingAlgorithm ipa = imageProcessingImpl.ProcessImageByAlgorithm(a.AlgorithmName);
@@ -235,6 +235,8 @@ namespace ImageRecognitionApp
 
         private void AlgorithmSelectBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            groupBox2.Controls.Clear();
+
             var parametersImpl = new ImageParametersImpl();
             IAlgorithmParameter p = parametersImpl.GetParametersByAlgorithm(AlgorithmSelectBox.SelectedItem.ToString());
             var template = p.ParameterTemplate;

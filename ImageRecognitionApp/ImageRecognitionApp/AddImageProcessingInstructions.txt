@@ -1,0 +1,20 @@
+Image processing algorithm add instructions
+
+1. Register a new Parameter in Models IMageProcessingParameters folder. Example of parameter class below.
+
+	public class BlurParameters : IAlgorithmParameter
+    {
+        public string AlgorithmName => "BlurAlgorithm";
+        IAlgorithmParameterTemplate IAlgorithmParameter.ParameterTemplate => new BlurParametersTemplate();
+        public int KSize { get; set; }
+        public int Sigma { get; set; }
+
+    }
+
+2. Define algortihm parameters template to be used in GUI. Implementations -> AlgorithmParameterTemplates
+3. Reference Algorith parameters class in ImageProcessingParametersAbstraction.cs file.
+4. Reference Algorithm in file ImageParametersImpl.cs.
+5. Reference Algorithm in file ImageProcessing.cs.
+6. 
+
+    

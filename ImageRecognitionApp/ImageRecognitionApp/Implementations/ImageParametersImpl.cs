@@ -17,6 +17,7 @@ namespace ImageRecognitionApp.Implementations
             parameters = new List<IAlgorithmParameter>
             {
                 new BlurParameters(),
+                new CannyParameters()
             };
         }
 
