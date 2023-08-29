@@ -11,5 +11,6 @@ namespace ImageRecognitionApp.Models.ImageProcessingParameters
         public bool ProgressiveProcessing;
         public BlurParameters BlurParameters { get; set; }
         public CannyParameters CannyParameters { get; set; }
+        public DilateParameters DilateParameters { get; set; }
     }
 }

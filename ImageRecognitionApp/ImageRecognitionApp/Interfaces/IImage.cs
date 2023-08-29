@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ImageRecognitionApp.Interfaces
 {
-    internal interface IImage : ICloneable
+    public interface IImage : ICloneable
     {
         byte[] Image { get; set; }
         IImage ImageFromFile(string fileName);

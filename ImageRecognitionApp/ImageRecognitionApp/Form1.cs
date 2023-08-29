@@ -147,13 +147,17 @@ namespace ImageRecognitionApp
 
         private void RedrawActions()
         {
+            ClearActions();
+
             int x = 20;
             int y = 20;
             int width = 160;
             int xSpacing = 10;
 
-            foreach (var a in imageProcessingActions)
+            for (int i = 0; i < imageProcessingActions.Count; i++)
             {
+                var a = imageProcessingActions[i];
+
                 Panel p = new Panel();
                 p.Size = new System.Drawing.Size(width - xSpacing, 20);
                 p.Location = new System.Drawing.Point(x, y);
@@ -164,6 +168,15 @@ namespace ImageRecognitionApp
                 l.Location = new System.Drawing.Point(0, 0);
                 l.TextAlign = ContentAlignment.MiddleCenter;
                 l.Text = a.AlgorithmName;
+                l.Tag = i;
+
+                l.MouseEnter += (s, e) => { l.Text = "Click to remove"; };
+                l.MouseLeave += (s, e) => { l.Text = a.AlgorithmName; };
+
+                l.Click += (s, e) => { 
+                    imageProcessingActions.RemoveAt((int)l.Tag);
+                    RedrawActions();
+                };
 
                 p.Controls.Add(l);
                 groupBox1.Controls.Add(p);
@@ -171,6 +184,11 @@ namespace ImageRecognitionApp
 
 
             }
+        }
+
+        private void ClearActions()
+        {
+            groupBox1.Controls.Clear();
         }
 
         public void MaskImage()

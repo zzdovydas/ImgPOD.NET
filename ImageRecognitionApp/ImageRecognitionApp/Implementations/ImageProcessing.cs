@@ -18,7 +18,8 @@ namespace ImageRecognitionApp.Implementations
             algorithms = new List<IImageProcessingAlgorithm>
             {
                 new Implementations.ImageProcessing.BlurProcessing(),
-                new Implementations.ImageProcessing.CannyProcessing()
+                new Implementations.ImageProcessing.CannyProcessing(),
+                new Implementations.ImageProcessing.DilateProcessing(),
             };
         }
 

@@ -53,7 +53,6 @@ namespace ImageRecognitionApp.Implementations.AlgorithmParameterTemplates
             p.Controls.Add(Sigma);
             p.Controls.Add(ProgressiveProcessing);
 
-
             KSize.Value = 3;
 
             return p;

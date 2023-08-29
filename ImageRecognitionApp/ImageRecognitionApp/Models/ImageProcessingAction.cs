@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ImageRecognitionApp.Models
 {
@@ -11,5 +12,6 @@ namespace ImageRecognitionApp.Models
     {
         public ImageProcessingParametersAbstraction Parameters;
         public string AlgorithmName;
+        public Control ActionDisplayElement;
     }
 }

@@ -92,6 +92,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Implementations\AlgorithmParameterTemplates\DilateParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\CannyParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\BlurParametersTemplate.cs" />
     <Compile Include="Implementations\ImageImpl.cs" />
@@ -99,6 +100,7 @@
     <Compile Include="Implementations\ImageProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\CannyProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\BlurProcessing.cs" />
+    <Compile Include="Implementations\ImageProcessingOpenCV\DilateProcessing.cs" />
     <Compile Include="Interfaces\IAlgorithmParameter.cs" />
     <Compile Include="Interfaces\IAlgorithmParameterTemplate.cs" />
     <Compile Include="Interfaces\IImage.cs" />
@@ -106,6 +108,7 @@
     <Compile Include="Models\ImageProcessingAction.cs" />
     <Compile Include="Models\ImageProcessingParameters\BlurParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\CannyParameters.cs" />
+    <Compile Include="Models\ImageProcessingParameters\DilateParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\ImageProcessingParametersAbstraction.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -137,9 +140,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Utils\GUIHelpers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="AddImageProcessingInstructions.txt" />
   </ItemGroup>
