@@ -35,6 +35,8 @@
             this.StartImageProcessingButton = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.ImageResultsPanel = new System.Windows.Forms.Panel();
+            this.LoadImageButton = new System.Windows.Forms.Button();
+            this.LoadVideoButton = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,11 +113,33 @@
             this.ImageResultsPanel.Size = new System.Drawing.Size(1811, 524);
             this.ImageResultsPanel.TabIndex = 0;
             // 
+            // LoadImageButton
+            // 
+            this.LoadImageButton.Location = new System.Drawing.Point(12, 545);
+            this.LoadImageButton.Name = "LoadImageButton";
+            this.LoadImageButton.Size = new System.Drawing.Size(146, 23);
+            this.LoadImageButton.TabIndex = 0;
+            this.LoadImageButton.Text = "Load image";
+            this.LoadImageButton.UseVisualStyleBackColor = true;
+            this.LoadImageButton.Click += new System.EventHandler(this.LoadImageButton_Click);
+            // 
+            // LoadVideoButton
+            // 
+            this.LoadVideoButton.Location = new System.Drawing.Point(164, 545);
+            this.LoadVideoButton.Name = "LoadVideoButton";
+            this.LoadVideoButton.Size = new System.Drawing.Size(146, 23);
+            this.LoadVideoButton.TabIndex = 10;
+            this.LoadVideoButton.Text = "Load video";
+            this.LoadVideoButton.UseVisualStyleBackColor = true;
+            this.LoadVideoButton.Click += new System.EventHandler(this.LoadVideoButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1817, 779);
+            this.Controls.Add(this.LoadVideoButton);
+            this.Controls.Add(this.LoadImageButton);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.StartImageProcessingButton);
             this.Controls.Add(this.groupBox2);
@@ -140,6 +164,8 @@
         private System.Windows.Forms.Button StartImageProcessingButton;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Panel ImageResultsPanel;
+        private System.Windows.Forms.Button LoadImageButton;
+        private System.Windows.Forms.Button LoadVideoButton;
     }
 }
 

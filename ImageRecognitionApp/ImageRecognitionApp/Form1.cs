@@ -18,6 +18,7 @@ using ImageRecognitionApp.Implementations;
 using ImageRecognitionApp.Interfaces;
 using ImageRecognitionApp.Models.ImageProcessingParameters;
 using ImageRecognitionApp.Models;
+using ImageRecognitionApp.Utils;
 
 namespace ImageRecognitionApp
 {
@@ -25,11 +26,12 @@ namespace ImageRecognitionApp
     {
         private readonly ImageProcessingImpl imageProcessingImpl;
         private List<ImageProcessingAction> imageProcessingActions;
+        private List<IImage> selectedImageList;
 
         private List<Panel> actionControls;
         private List<PictureBox> imageControls;
 
-        private List<Bitmap> imageResults;
+        private List<List<Bitmap>> imageResults;
         private IAlgorithmParameterTemplate selectedParameters;
 
         public MainForm()
@@ -38,7 +40,8 @@ namespace ImageRecognitionApp
 
             imageProcessingImpl = new ImageProcessingImpl();
             imageProcessingActions = new List<ImageProcessingAction>();
-            imageResults = new List<Bitmap>();
+            selectedImageList = new List<IImage>();
+            imageResults = new List<List<Bitmap>>();
 
             actionControls = new List<Panel>();
             imageControls = new List<PictureBox>();
@@ -89,38 +92,42 @@ namespace ImageRecognitionApp
 
         private void ProcessImagesByAlgorithms()
         {
-            IImage srcImage = new ImageImpl();
-            srcImage.ImageFromFile("5.png");
-            IImage tempImage = (IImage)srcImage.Clone();
-
-            imageResults.Add(ImageProcessingHelpers.ByteArrayToBitmap(tempImage.Image));
-
-            foreach (var a in imageProcessingActions)
+            foreach (var srcImage in selectedImageList)
             {
-                try
+                IImage tempImage = (IImage)srcImage.Clone();
+                List<Bitmap> resultImageList = new List<Bitmap>();
+
+                resultImageList.Add(ImageProcessingHelpers.ByteArrayToBitmap(tempImage.Image));
+
+                foreach (var a in imageProcessingActions)
                 {
-                    if (a.Parameters.ProgressiveProcessing)
+                    try
                     {
-                        tempImage = (IImage)srcImage.Clone();
+                        if (a.Parameters.ProgressiveProcessing)
+                        {
+                            tempImage = (IImage)srcImage.Clone();
+                        }
+
+                        IImageProcessingAlgorithm ipa = imageProcessingImpl.ProcessImageByAlgorithm(a.AlgorithmName);
+                        IImage result = ipa.ProcessImage(tempImage, a.Parameters);
+
+                        resultImageList.Add(ImageProcessingHelpers.ByteArrayToBitmap(result.Image));
+
+                        tempImage = result;
                     }
-
-                    IImageProcessingAlgorithm ipa = imageProcessingImpl.ProcessImageByAlgorithm(a.AlgorithmName);
-                    IImage result = ipa.ProcessImage(tempImage, a.Parameters);
-
-                    imageResults.Add(ImageProcessingHelpers.ByteArrayToBitmap(result.Image));
-
-                    tempImage = result;
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
-                catch (Exception ex) 
-                {
-                    MessageBox.Show(ex.Message);
-                }
+
+                imageResults.Add(resultImageList);
             }
         }
         private void DestroyPreviousImageControls()
         {
             imageControls = new List<PictureBox>();
-            imageResults = new List<Bitmap>();
+            imageResults = new List<List<Bitmap>>();
             ImageResultsPanel.Controls.Clear();
         }
 
@@ -134,14 +141,21 @@ namespace ImageRecognitionApp
 
             foreach (var r in imageResults)
             {
-                PictureBox p = new PictureBox();
-                p.Image = r;
-                p.Location = new System.Drawing.Point(x, y);
-                p.Size = new System.Drawing.Size(width - xSpacing, height);
-                ImageResultsPanel.Controls.Add(p);
-                imageControls.Add(p);
+                foreach (var picture in r)
+                {
+                    PictureBox p = new PictureBox();
+                    p.Image = picture;
+                    p.Location = new System.Drawing.Point(x, y);
+                    p.Size = new System.Drawing.Size(width - xSpacing, height);
+                    p.SizeMode = PictureBoxSizeMode.StretchImage;
+                    ImageResultsPanel.Controls.Add(p);
+                    imageControls.Add(p);
 
-                x += width;
+                    x += width;
+                }
+
+                y += 500;
+                x = 20;
             }
         }
 
@@ -261,6 +275,22 @@ namespace ImageRecognitionApp
             selectedParameters = template;
 
             groupBox2.Controls.Add(template.Draw());
+        }
+
+        private void LoadImageButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void LoadVideoButton_Click(object sender, EventArgs e)
+        {
+            List<IImage> videoImages = VideoToImagesConverter.ConvertByPathName("video.mp4");
+            selectedImageList.AddRange(videoImages);
+        }
+
+        private void AddToImageList(List<IImage> list)
+        {
+
         }
     }
 }
