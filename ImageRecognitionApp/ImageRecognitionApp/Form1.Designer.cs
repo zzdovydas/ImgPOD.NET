@@ -37,6 +37,7 @@
             this.ImageResultsPanel = new System.Windows.Forms.Panel();
             this.LoadImageButton = new System.Windows.Forms.Button();
             this.LoadVideoButton = new System.Windows.Forms.Button();
+            this.saveImageDialog = new System.Windows.Forms.SaveFileDialog();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -133,6 +134,10 @@
             this.LoadVideoButton.UseVisualStyleBackColor = true;
             this.LoadVideoButton.Click += new System.EventHandler(this.LoadVideoButton_Click);
             // 
+            // saveImageDialog
+            // 
+            this.saveImageDialog.FileOk += new System.ComponentModel.CancelEventHandler(this.saveImageDialog_FileOk);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -166,6 +171,7 @@
         private System.Windows.Forms.Panel ImageResultsPanel;
         private System.Windows.Forms.Button LoadImageButton;
         private System.Windows.Forms.Button LoadVideoButton;
+        private System.Windows.Forms.SaveFileDialog saveImageDialog;
     }
 }
 

@@ -19,6 +19,7 @@ namespace ImageRecognitionApp.Implementations
                 new BlurParameters(),
                 new CannyParameters(),
                 new DilateParameters(),
+                new MaskParameters(),
             };
         }
 

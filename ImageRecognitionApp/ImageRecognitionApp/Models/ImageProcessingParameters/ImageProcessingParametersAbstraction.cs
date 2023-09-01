@@ -12,5 +12,6 @@ namespace ImageRecognitionApp.Models.ImageProcessingParameters
         public BlurParameters BlurParameters { get; set; }
         public CannyParameters CannyParameters { get; set; }
         public DilateParameters DilateParameters { get; set; }
+        public MaskParameters MaskParameters { get; set; }
     }
 }

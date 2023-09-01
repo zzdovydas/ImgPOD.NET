@@ -20,6 +20,7 @@ namespace ImageRecognitionApp.Implementations
                 new Implementations.ImageProcessing.BlurProcessing(),
                 new Implementations.ImageProcessing.CannyProcessing(),
                 new Implementations.ImageProcessing.DilateProcessing(),
+                new Implementations.ImageProcessing.MaskProcessing(),
             };
         }
 

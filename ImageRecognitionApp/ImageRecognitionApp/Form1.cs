@@ -19,6 +19,7 @@ using ImageRecognitionApp.Interfaces;
 using ImageRecognitionApp.Models.ImageProcessingParameters;
 using ImageRecognitionApp.Models;
 using ImageRecognitionApp.Utils;
+using ImageRecognitionApp.Extensions;
 
 namespace ImageRecognitionApp
 {
@@ -27,6 +28,7 @@ namespace ImageRecognitionApp
         private readonly ImageProcessingImpl imageProcessingImpl;
         private List<ImageProcessingAction> imageProcessingActions;
         private List<IImage> selectedImageList;
+        private Bitmap selectedImageToSave;
 
         private List<Panel> actionControls;
         private List<PictureBox> imageControls;
@@ -40,6 +42,7 @@ namespace ImageRecognitionApp
 
             imageProcessingImpl = new ImageProcessingImpl();
             imageProcessingActions = new List<ImageProcessingAction>();
+            selectedImageToSave = null;
             selectedImageList = new List<IImage>();
             imageResults = new List<List<Bitmap>>();
 
@@ -148,6 +151,12 @@ namespace ImageRecognitionApp
                     p.Location = new System.Drawing.Point(x, y);
                     p.Size = new System.Drawing.Size(width - xSpacing, height);
                     p.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                    p.Click += (s, e) => {
+                        selectedImageToSave = picture;
+                        saveImageDialog.ShowDialog();
+                    };
+
                     ImageResultsPanel.Controls.Add(p);
                     imageControls.Add(p);
 
@@ -291,6 +300,18 @@ namespace ImageRecognitionApp
         private void AddToImageList(List<IImage> list)
         {
 
+        }
+
+        private void saveImageDialog_FileOk(object sender, CancelEventArgs e)
+        {
+            if (selectedImageToSave == null) 
+            {
+                MessageBox.Show("Error! Image is not selected!");
+                return;
+            }
+
+            var bytes = selectedImageToSave.ToBytes(ImageFormat.Png);
+            File.WriteAllBytes(saveImageDialog.FileName, bytes);
         }
     }
 }
