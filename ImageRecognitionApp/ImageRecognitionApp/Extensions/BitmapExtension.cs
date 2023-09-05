@@ -19,5 +19,11 @@ namespace ImageRecognitionApp.Extensions
                 return ms.ToArray();
             }
         }
+
+        public static Bitmap Crop(this Bitmap b, Rectangle r)
+        {
+            Bitmap result = b.Clone(r, b.PixelFormat);
+            return result;
+        }
     }
 }

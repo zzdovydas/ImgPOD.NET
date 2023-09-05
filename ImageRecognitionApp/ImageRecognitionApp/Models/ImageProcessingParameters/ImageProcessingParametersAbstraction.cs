@@ -13,5 +13,6 @@ namespace ImageRecognitionApp.Models.ImageProcessingParameters
         public CannyParameters CannyParameters { get; set; }
         public DilateParameters DilateParameters { get; set; }
         public MaskParameters MaskParameters { get; set; }
+        public CropParameters CropParameters { get; set; }
     }
 }

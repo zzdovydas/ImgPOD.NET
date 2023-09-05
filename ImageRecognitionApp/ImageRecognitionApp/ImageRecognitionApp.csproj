@@ -78,6 +78,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Implementations\AlgorithmParameterTemplates\CropParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\MaskParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\DilateParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\CannyParametersTemplate.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Implementations\ImageImpl.cs" />
     <Compile Include="Implementations\ImageParametersImpl.cs" />
     <Compile Include="Implementations\ImageProcessing.cs" />
+    <Compile Include="Implementations\ImageProcessingOpenCV\CropProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\CannyProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\BlurProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\MaskProcessing.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Models\ImageProcessingAction.cs" />
     <Compile Include="Models\ImageProcessingParameters\BlurParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\CannyParameters.cs" />
+    <Compile Include="Models\ImageProcessingParameters\CropParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\MaskParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\DilateParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\ImageProcessingParametersAbstraction.cs" />

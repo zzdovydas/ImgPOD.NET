@@ -20,6 +20,7 @@ namespace ImageRecognitionApp.Implementations
                 new CannyParameters(),
                 new DilateParameters(),
                 new MaskParameters(),
+                new CropParameters(),
             };
         }
 
