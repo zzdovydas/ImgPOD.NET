@@ -83,9 +83,11 @@
     <Compile Include="Implementations\AlgorithmParameterTemplates\DilateParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\CannyParametersTemplate.cs" />
     <Compile Include="Implementations\AlgorithmParameterTemplates\BlurParametersTemplate.cs" />
+    <Compile Include="Implementations\AlgorithmParameterTemplates\ThresholdParametersTemplate.cs" />
     <Compile Include="Implementations\ImageImpl.cs" />
     <Compile Include="Implementations\ImageParametersImpl.cs" />
     <Compile Include="Implementations\ImageProcessing.cs" />
+    <Compile Include="Implementations\ImageProcessingOpenCV\ThresholdProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\CropProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\CannyProcessing.cs" />
     <Compile Include="Implementations\ImageProcessingOpenCV\BlurProcessing.cs" />
@@ -96,6 +98,7 @@
     <Compile Include="Interfaces\IImage.cs" />
     <Compile Include="Interfaces\ImageProcessing\IImageProcessingAlgorithm.cs" />
     <Compile Include="Models\ImageProcessingAction.cs" />
+    <Compile Include="Models\ImageProcessingParameters\ThresholdParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\BlurParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\CannyParameters.cs" />
     <Compile Include="Models\ImageProcessingParameters\CropParameters.cs" />

@@ -21,6 +21,7 @@ namespace ImageRecognitionApp.Implementations
                 new DilateParameters(),
                 new MaskParameters(),
                 new CropParameters(),
+                new ThresholdParameters(),
             };
         }
 

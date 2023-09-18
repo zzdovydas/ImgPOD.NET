@@ -21,7 +21,8 @@ namespace ImageRecognitionApp.Implementations
                 new Implementations.ImageProcessing.CannyProcessing(),
                 new Implementations.ImageProcessing.DilateProcessing(),
                 new Implementations.ImageProcessing.MaskProcessing(),
-                new Implementations.ImageProcessing.CropProcessing()
+                new Implementations.ImageProcessing.CropProcessing(),
+                new Implementations.ImageProcessing.ThresholdProcessing()
             };
         }
 

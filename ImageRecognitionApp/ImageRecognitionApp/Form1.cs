@@ -246,7 +246,7 @@ namespace ImageRecognitionApp
 
                 var diff = new Mat();
                 Cv2.Absdiff(blur, mask, blur);
-                //Cv2.Threshold(blur, blur, 38, 150, ThresholdTypes.Binary);
+                Cv2.Threshold(blur, blur, 38, 150, OpenCvSharp.ThresholdTypes.Binary);
 
                 var canny = new Mat();
                 Cv2.Canny(blur, canny, 15, 120);

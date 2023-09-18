@@ -14,5 +14,6 @@ namespace ImageRecognitionApp.Models.ImageProcessingParameters
         public DilateParameters DilateParameters { get; set; }
         public MaskParameters MaskParameters { get; set; }
         public CropParameters CropParameters { get; set; }
+        public ThresholdParameters ThresholdParameters { get; set; }
     }
 }
