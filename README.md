@@ -8,13 +8,20 @@ PROJECT IS STILL UNDER DEVELOPMENT.
 Project wraps around OpenCV Sharp library to provide user image processing functionality. The application is created using .NET WinForms project type.
 
 So these functionalities are available:
-* Blur algorithm
-* Canny algorithm
-* Crop algorithm
-* Dilate algorithm
-* Mask/Absdiff algorithm
-* Threshold algorithm
-* Video loading.
+- [X] Blur algorithm
+- [X] Canny algorithm
+- [X] Crop algorithm
+- [X] Dilate algorithm
+- [X] Mask/Absdiff algorithm
+- [X] Threshold algorithm
+- [X] Video loading
+- [X] Save result images
+
+Functionalities coming soon:
+- [ ] Friendly GUI
+- [ ] Object detection algorithm
+- [ ] Design changes
+- [ ] More image processing algorithms...
 
 Example with result:
 
