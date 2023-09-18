@@ -1,7 +1,9 @@
 # ImgPOD.NET
 Image processing and Object detection tool for Windows.
 
-PROJECT IS STILL UNDER DEVELOPMENT.
+> [!IMPORTANT]
+> **PROJECT IS STILL UNDER DEVELOPMENT.**
+
 
 .NET application for Windows for image processing and object detection. With application user is able to create image processing and object detection models with different parameters and view/save the results.
 
