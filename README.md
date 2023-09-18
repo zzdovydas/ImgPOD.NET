@@ -18,4 +18,5 @@ So these functionalities are available:
 
 Example with result:
 
-![image](https://github.com/zzdovydas/ImgPOD.NET/assets/60687269/5dd11be9-04a4-42fa-88e3-ca724c94b954)
+![image](https://github.com/zzdovydas/ImgPOD.NET/assets/60687269/d6c9d53b-f822-4f40-a603-7075737332ad)
+
