@@ -14,7 +14,8 @@ So these functionalities are available:
 * Dilate algorithm
 * Mask/Absdiff algorithm
 * Threshold algorithm
-* Video laoding.
+* Video loading.
 
 Example with result:
+
 ![image](https://github.com/zzdovydas/ImgPOD.NET/assets/60687269/b8501246-0014-4926-8d93-1819f9a86d33)
