@@ -22,6 +22,7 @@ namespace ImageRecognitionApp.Implementations
                 new MaskParameters(),
                 new CropParameters(),
                 new ThresholdParameters(),
+                new ContourParameters(),
             };
         }
 

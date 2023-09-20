@@ -15,5 +15,6 @@ namespace ImageRecognitionApp.Models.ImageProcessingParameters
         public MaskParameters MaskParameters { get; set; }
         public CropParameters CropParameters { get; set; }
         public ThresholdParameters ThresholdParameters { get; set; }
+        public ContourParameters ContourParameters { get; set; }
     }
 }
